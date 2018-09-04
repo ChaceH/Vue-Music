@@ -1,5 +1,5 @@
 <template>
-    <div class = "font-color-white">
+    <div class = "font-color-white pad-bottom">
       <img :src="song.artworkUrl100" alt="">
       <p>Artist: {{song.artistName}}</p>
       <p>Song: {{song.trackName}}</p>
@@ -33,5 +33,9 @@ export default {
 <style>
 .font-color-white{
   color: white;
+};
+
+.pad-bottom{
+  padding-bottom: 4rem;
 }
 </style>

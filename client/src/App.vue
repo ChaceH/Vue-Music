@@ -29,12 +29,13 @@
 }
 
 .main-bg {
-  background-image: url('./assets/yodamusic.jpg')
+  background-image: url('./assets/yodamusic.jpg');
+  background-size: cover;
 }
 
 .font-color{
-  color: white;
-  text-shadow: 2px 2px black;
+  color: black;
+  text-shadow: 5px 5px white;
   font-size: 70pt
 }
 </style>

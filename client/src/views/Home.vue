@@ -1,18 +1,18 @@
 <template>
   <div class="home container-fluid bg-black">
-     <form class="" @submit="getItunes()">
+     <form class="" @submit.prevent="getItunes()">
         <div class="form-group">
-            <input v-model="searchTerm" type="text" class="form-control" name="artist" placeholder="Artist Name" />
-            <button type="submit" class="btn btn-success" id="get-music-button">Get Music</button>
+            <input v-model="searchTerm" type="text" class="form-control" name="artist" placeholder="Type Here to Search" />
+            <button type="submit" class="btn btn-success" id="get-music-button">SEARCH</button>
         </div>
     </form>
     <div class="row justify-content-center">
     <div class="col-sm-6 justify-content-center">
-      <h4 class="title-text">Itunes</h4>
+      <h4 class="title-text">Results</h4>
       <songs v-for="song in this.itunesPlaylist" :song="song" :inMytunes="false" :key="song.trackId"/>
     </div>
     <div class="col-sm-6 justify-content-center">
-      <h4 class="title-text">MyTunes</h4>
+      <h4 class="title-text">Playlist</h4>
       <songs v-for="song in this.mytunesPlaylist" :song="song" :inMytunes="true" :key="song.trackId"/>
     </div>
     </div>
@@ -21,7 +21,7 @@
 
 <script>
 //cd into client and npm run serve to run client side
-//node server to rune server side
+//node server to run server side
 
 // @ is an alias to /src
 import songs from "@/components/song.vue";
