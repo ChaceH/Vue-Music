@@ -15,10 +15,6 @@ router.get('/api/songs', (req, res, next) => {
 //ADD
 router.post('/api/songs', (req, res, next) => {
     var song = req.body
-    if (Songs.findOne({ trackId: song.trackId })) {
-        res.status(400).send('Song already exists');
-        return;
-    }
     Songs.create(song)
         .then(newSong => {
             res.status(204).send(newSong)

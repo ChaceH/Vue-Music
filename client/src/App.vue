@@ -1,7 +1,7 @@
 <template>
-  <div id="app">
-    <div id="nav">
-      <h1>My-Tunes</h1>
+  <div id="app" >
+    <div id="nav" class="main-bg">
+      <h1 class="font-color">My-Tunes</h1>
     </div>
     <router-view/>
   </div>
@@ -16,7 +16,7 @@
   color: #2c3e50;
 }
 #nav {
-  padding: 30px;
+  padding: 146px;
 }
 
 #nav a {
@@ -26,5 +26,15 @@
 
 #nav a.router-link-exact-active {
   color: #42b983;
+}
+
+.main-bg {
+  background-image: url('./assets/yodamusic.jpg')
+}
+
+.font-color{
+  color: white;
+  text-shadow: 2px 2px black;
+  font-size: 70pt
 }
 </style>

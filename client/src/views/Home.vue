@@ -1,18 +1,18 @@
 <template>
-  <div class="home container-fluid">
+  <div class="home container-fluid bg-black">
      <form class="" @submit="getItunes()">
         <div class="form-group">
             <input v-model="searchTerm" type="text" class="form-control" name="artist" placeholder="Artist Name" />
             <button type="submit" class="btn btn-success" id="get-music-button">Get Music</button>
         </div>
     </form>
-    <div class="row">
-    <div class="col-xs-6">
-      <h4>Itunes</h4>
+    <div class="row justify-content-center">
+    <div class="col-sm-6 justify-content-center">
+      <h4 class="title-text">Itunes</h4>
       <songs v-for="song in this.itunesPlaylist" :song="song" :inMytunes="false" :key="song.trackId"/>
     </div>
-    <div class="col-xs-6">
-      <h4>MyTunes</h4>
+    <div class="col-sm-6 justify-content-center">
+      <h4 class="title-text">MyTunes</h4>
       <songs v-for="song in this.mytunesPlaylist" :song="song" :inMytunes="true" :key="song.trackId"/>
     </div>
     </div>
@@ -20,6 +20,9 @@
 </template>
 
 <script>
+//cd into client and npm run serve to run client side
+//node server to rune server side
+
 // @ is an alias to /src
 import songs from "@/components/song.vue";
 
@@ -28,10 +31,10 @@ export default {
   components: {
     songs
   },
-  data(){
+  data() {
     return {
       searchTerm: ""
-    }
+    };
   },
   computed: {
     itunesPlaylist() {
@@ -42,15 +45,36 @@ export default {
     }
   },
   methods: {
-    getItunes(){
-      this.$store.dispatch('getItunes', this.searchTerm);
+    getItunes() {
+      this.$store.dispatch("getItunes", this.searchTerm);
     },
-    getMytunes(){
-      this.$store.dispatch('getMytunes')
+    getMytunes() {
+      this.$store.dispatch("getMytunes");
     }
   },
   mounted() {
-    this.getMytunes()
+    this.getMytunes();
   }
 };
 </script>
+
+<style>
+.justfy-content-center {
+  display: flex;
+  justify-content: center;
+}
+
+.justfy-space-between {
+  display: flex;
+  justify-content: space-between;
+}
+.bg-black {
+  background-color: black;
+}
+
+.title-text{
+  color:white;
+  font-size: 20pt
+}
+</style>
+

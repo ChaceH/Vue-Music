@@ -1,5 +1,5 @@
 <template>
-    <div class = "">
+    <div class = "font-color-white">
       <img :src="song.artworkUrl100" alt="">
       <p>Artist: {{song.artistName}}</p>
       <p>Song: {{song.trackName}}</p>
@@ -30,3 +30,8 @@ export default {
   }
 };
 </script>
+<style>
+.font-color-white{
+  color: white;
+}
+</style>
